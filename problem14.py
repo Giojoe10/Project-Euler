@@ -1,12 +1,7 @@
 from commonfunctions import conjecture
 
 def problem14():
-  max=[0,0]
-  l=0
-  for x in range(1,1000000):
-    l = len(conjecture(x))
-    if l>max[1]:
-      max = [x, l]  
-  print(f"The starting number that produces the lognest chain ({max[1]}) is {max[0]}")
+  lengths=[len(list(conjecture(x))) for x in range(1,1_000_000)]
+  print(f"The starting number that produces the longest chain ({max(lengths)}) is {lengths.index(max(lengths))+1}")
 
 problem14()
