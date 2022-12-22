@@ -1,8 +1,19 @@
 def isPrime(x):
   """This function returns if the input is prime or not"""
-  for i in range(2,int((x/2)+1),2):
+  for i in range(2,int((x/2)+1)):
        if (x%i==0): return False
   return True
+
+
+def generate_primes(length: int):
+    """This function returns a list of [length] prime numbers"""
+    primes = []
+    i=2
+    while len(primes)<length:
+        if isPrime(i):
+            primes.append(i)
+        i=i+1
+    return primes
 
 def conjecture(x):
   """This function yields the Collatz conjecture of the input"""
